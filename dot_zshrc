@@ -1,0 +1,11 @@
+
+# Set up go
+export GOPRIVATE="github.com/moov-io/*,github.com/moovfinancial/*"
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH=$PATH:${GOPATH}/bin:${GOROOT}/bin
+
+export GOOGLE_CLOUD_PROJECT=moov-gemini
+
+# Secrets - need to be moved to a secrets.env file
+[[ -f ~/.secrets.env ]] && source ~/.secrets.env
