@@ -9,3 +9,5 @@
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = /Users/ray.johnson/.gitignore_global
