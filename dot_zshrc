@@ -1,3 +1,5 @@
+# initialize autocompletion
+autoload -U compinit && compinit
 
 # Set up go
 export GOPRIVATE="github.com/moov-io/*,github.com/moovfinancial/*"
@@ -10,4 +12,6 @@ export GOOGLE_CLOUD_PROJECT=moov-gemini
 # Secrets - need to be moved to a secrets.env file
 [[ -f ~/.secrets.env ]] && source ~/.secrets.env
 
+# load aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
