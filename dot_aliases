@@ -1,0 +1,5 @@
+
+# Basic Aliases
+alias ls='ls -G' # Colorized ls for macOS/BSD
+alias ll='ls -lh'
+alias gs='git status'
