@@ -15,3 +15,27 @@ export GOOGLE_CLOUD_PROJECT=moov-gemini
 # load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# Function to get the current Git branch and status
+parse_git_branch() {
+    # Check if we are inside a Git repository
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        # Get the branch name
+        local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+        # Check for uncommitted changes (M=modified, D=deleted, etc.)
+        if git diff --quiet 2>/dev/null; then
+            # No changes
+            echo " ($branch)"
+        else
+            # Changes present (add an asterisk or other symbol)
+            echo " ($branch*)"
+        fi
+    fi
+}
+
+# Define the prompt
+# %n = username
+# %~ = current working directory (full path)
+# $(parse_git_branch) = output of the function above
+# $ = prompt character (if user is not root, # if root)
+PROMPT="%n:%~$(parse_git_branch)$ "
+
