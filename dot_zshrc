@@ -40,9 +40,9 @@ parse_git_branch() {
 # %~ = current working directory (full path)
 # $(parse_git_branch) = output of the function above
 # $ = prompt character (if user is not root, # if root)
-PROMPT="%n:%~$(parse_git_branch)$ "
+# PROMPT="%n:%~$(parse_git_branch)$ "
 
 # 3. Set the prompt
 # %n = user | %~ = path | $(parse_git_branch) = git info
-PROMPT='%F{cyan}%n%f %F{blue}%~%f$(parse_git_branch) %# '
+PROMPT='%F{cyan}%n%f %F{blue}%~%f$(parse_git_branch) %# $'
 
