@@ -24,13 +24,26 @@ parse_git_branch() {
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
         # Get the branch name
         local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
-        # Check for uncommitted changes (M=modified, D=deleted, etc.)
-        if git diff --quiet 2>/dev/null; then
-            # No changes
-            echo " ($branch)"
+        # Check for staged changes (index vs HEAD)
+        local staged=""
+        if ! git diff --cached --quiet 2>/dev/null; then
+            staged="+"
+        fi
+
+        # Check for unstaged changes (working tree vs index)
+        local unstaged=""
+        if ! git diff --quiet 2>/dev/null; then
+            unstaged="*"
+        fi
+
+        # Build the status indicator
+        local status="${staged}${unstaged}"
+        if [[ -n "$status" ]]; then
+            echo " ($branch$status)"
         else
             # Changes present (add an asterisk or other symbol)
             echo " ($branch*)"
+            echo " ($branch)"
         fi
     fi
 }
