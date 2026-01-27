@@ -3,7 +3,6 @@ autoload -U compinit && compinit
 
 export EDITOR="vim -f"
 
-
 # Set up go
 export GOPRIVATE="github.com/moov-io/*,github.com/moovfinancial/*"
 export GOPATH=$HOME/go
