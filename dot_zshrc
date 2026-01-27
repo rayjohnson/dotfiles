@@ -1,7 +1,8 @@
 # initialize autocompletion
 autoload -U compinit && compinit
 
-setopt prompt_subst
+export EDITOR="vim -f"
+
 
 # Set up go
 export GOPRIVATE="github.com/moov-io/*,github.com/moovfinancial/*"
@@ -17,6 +18,7 @@ export GOOGLE_CLOUD_PROJECT=moov-gemini
 # load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+setopt prompt_subst
 # Function to get the current Git branch and status
 parse_git_branch() {
     # Check if we are inside a Git repository
