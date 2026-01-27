@@ -37,12 +37,10 @@ parse_git_branch() {
         fi
 
         # Build the status indicator
-        local status="${staged}${unstaged}"
-        if [[ -n "$status" ]]; then
-            echo " ($branch$status)"
+        local git_status="${staged}${unstaged}"
+        if [[ -n "$git_status" ]]; then
+            echo " ($branch$git_status)"
         else
-            # Changes present (add an asterisk or other symbol)
-            echo " ($branch*)"
             echo " ($branch)"
         fi
     fi
