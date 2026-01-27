@@ -11,3 +11,5 @@
 	defaultBranch = main
 [core]
 	excludesfile = /Users/ray.johnson/.gitignore_global
+[push]
+	autoSetupRemote = true
