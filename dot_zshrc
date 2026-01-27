@@ -42,3 +42,7 @@ parse_git_branch() {
 # $ = prompt character (if user is not root, # if root)
 PROMPT="%n:%~$(parse_git_branch)$ "
 
+# 3. Set the prompt
+# %n = user | %~ = path | $(parse_git_branch) = git info
+PROMPT='%F{cyan}%n%f %F{blue}%~%f$(parse_git_branch) %# '
+
