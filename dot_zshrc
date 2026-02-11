@@ -48,5 +48,7 @@ parse_git_branch() {
 
 # Set the prompt
 # %n = user | %~ = path | $(parse_git_branch) = git info
-PROMPT='%F{cyan}%n%f %F{blue}%~%f$(parse_git_branch) %# '
+export PROMPT='%F{cyan}%n%f %F{blue}%~%f$(parse_git_branch) %# '
+export PROMPT_EOL_MARK=""
+
 
