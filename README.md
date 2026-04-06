@@ -11,6 +11,7 @@ First install brew:
 
 Download and install Brewfile
 ```
+eval "$(homebrew/bin/brew shellenv)"
 curl -O https://raw.githubusercontent.com/rayjohnson/dotfiles/main/Brewfile
 brew bundle --file Brewfile
 ```
