@@ -17,6 +17,11 @@ curl -O https://raw.githubusercontent.com/rayjohnson/dotfiles/main/Brewfile
 brew bundle --file Brewfile
 ```
 
+Then strip the quarantine flag from all installed apps to avoid "are you sure?" prompts when opening each one for the first time:
+```bash
+xattr -dr com.apple.quarantine /Applications
+```
+
 ### 3. Sign into 1Password and retrieve the age decryption key
 ```bash
 op signin
