@@ -37,8 +37,7 @@ This will restore all dotfiles including your encrypted `~/.secrets.env`.
 
 ### If you install new things with Brew
 ```bash
-brew bundle dump --force --file ~/.local/share/chezmoi/Brewfile
-chezmoi re-add Brewfile
+brew bundle dump --force --file $(chezmoi source-path)/Brewfile
 ```
 
 ### To update any tracked dotfile
