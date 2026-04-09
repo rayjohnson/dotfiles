@@ -31,13 +31,6 @@ chezmoi init --apply https://github.com/rayjohnson/dotfiles.git
 
 This will restore all dotfiles including your encrypted `~/.secrets.env`.
 
-### 5. Populate any missing secrets
-`~/.secrets.env` will be restored from the encrypted copy in the repo. If it was empty or incomplete, add your secrets:
-```bash
-vim ~/.secrets.env
-chezmoi add ~/.secrets.env
-```
-
 ---
 
 ## Updating your dotfiles
@@ -54,3 +47,11 @@ chezmoi add ~/.zshrc   # or any other tracked file
 ```
 
 `chezmoi add` automatically commits and pushes to git.
+
+## Updating secrets
+
+Edit `~/.secrets.env` and re-add it with the `--encrypt` flag to preserve encryption:
+```bash
+vim ~/.secrets.env
+chezmoi add --encrypt ~/.secrets.env
+```
