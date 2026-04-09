@@ -36,6 +36,13 @@ chezmoi init --apply https://github.com/rayjohnson/dotfiles.git
 
 This will restore all dotfiles including your encrypted `~/.secrets.env`. It will also automatically run `mac-defaults.sh` to apply macOS system settings (key repeat, Finder preferences, etc.).
 
+### 5. Manual system settings (cannot be automated)
+
+- **Disable iCloud Passwords & Keychain**: System Settings → Apple ID → iCloud → turn off "Passwords & Keychain"
+- **Disable AutoFill Passwords**: System Settings → Passwords → turn off "AutoFill Passwords"
+
+These prevent macOS from showing password suggestions that overlap the 1Password extension.
+
 ---
 
 ## Updating your dotfiles

@@ -27,5 +27,10 @@ defaults write com.apple.sidebarlists systemitems -dict-add ShowRemovable -int 1
 defaults write com.apple.sidebarlists systemitems -dict-add ShowHardDisks -int 1
 defaults write com.apple.sidebarlists systemitems -dict-add ShowEjectables -int 1
 
+# Disable Safari's built-in password autofill and credit card autofill - use 1Password
+# instead to avoid conflicting popups and suggestions overlapping the 1Password extension.
+defaults write com.apple.Safari AutoFillPasswords -bool false
+defaults write com.apple.Safari AutoFillCreditCardData -bool false
+
 # Restart Finder to apply changes
 killall Finder
