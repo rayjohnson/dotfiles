@@ -4,25 +4,53 @@ This is Ray Johnson's dotfiles repo. Follow the below instructions for setting u
 
 ## Set up new Mac
 
-First install brew:
+### 1. Install Homebrew
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-Download and install Brewfile
-```
-eval "$(homebrew/bin/brew shellenv)"
+### 2. Install all packages via Brewfile
+This installs chezmoi, 1Password, age, and everything else.
+```bash
 curl -O https://raw.githubusercontent.com/rayjohnson/dotfiles/main/Brewfile
 brew bundle --file Brewfile
 ```
 
-One of the things installed is chezmoi - now let's init chezmoi
-```
-chezmoi init https://github.com/rayjohnson/dotfiles.git
+### 3. Sign into 1Password and retrieve the age decryption key
+```bash
+op signin
+op document get "age-private-key" --output ~/.age/key.txt
+chmod 600 ~/.age/key.txt
 ```
 
-## If you install new things with Brew - update brewfile
+### 4. Initialize chezmoi and apply dotfiles
+```bash
+chezmoi init --apply https://github.com/rayjohnson/dotfiles.git
 ```
-brew bundle dump --force --file Brewfile
+
+This will restore all dotfiles including your encrypted `~/.secrets.env`.
+
+### 5. Populate any missing secrets
+`~/.secrets.env` will be restored from the encrypted copy in the repo. If it was empty or incomplete, add your secrets:
+```bash
+vim ~/.secrets.env
+chezmoi add ~/.secrets.env
+```
+
+---
+
+## Updating your dotfiles
+
+### If you install new things with Brew
+```bash
+brew bundle dump --force --file ~/.local/share/chezmoi/Brewfile
 chezmoi re-add Brewfile
 ```
+
+### To update any tracked dotfile
+```bash
+chezmoi add ~/.zshrc   # or any other tracked file
+```
+
+`chezmoi add` automatically commits and pushes to git.
