@@ -29,7 +29,7 @@ chmod 600 ~/.age/key.txt
 chezmoi init --apply https://github.com/rayjohnson/dotfiles.git
 ```
 
-This will restore all dotfiles including your encrypted `~/.secrets.env`.
+This will restore all dotfiles including your encrypted `~/.secrets.env`. It will also automatically run `mac-defaults.sh` to apply macOS system settings (key repeat, Finder preferences, etc.).
 
 ---
 
