@@ -51,4 +51,21 @@ parse_git_branch() {
 export PROMPT='%F{cyan}%n%f %F{blue}%~%f$(parse_git_branch) %# '
 export PROMPT_EOL_MARK=""
 
+# OrbStack bin — must precede Homebrew so docker resolves to OrbStack
+export PATH="$HOME/.orbstack/bin:$PATH"
 
+launch_claude() {
+  local dir="$(pwd)"
+
+  # Open a new Ghostty window, cd to current dir, then run claude
+  ghostty --working-directory="$dir" --command="zsh -c 'claude; exec zsh'" &
+
+  # Wait for the window to be ready
+  sleep 0.8
+
+  # Split right — this creates the shell pane (inherits working dir from Ghostty launch)
+  ghostty-pane-splitter 1,1
+
+  # Focus back to the left pane where claude is running
+  # (pane-splitter leaves focus on the newly created right pane)
+}
