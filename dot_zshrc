@@ -57,16 +57,12 @@ export PATH="$HOME/.orbstack/bin:$PATH"
 launch_claude() {
   local dir="$(pwd)"
 
-  # Open new Ghostty window as a plain shell
-  ghostty --working-directory="$dir" &
+  open -na Ghostty --args --working-directory="$dir"
 
-  # Wait for window to be ready
   sleep 0.8
 
-  # Split right (right pane is a plain shell, focus moves to right pane)
   ghostty-pane-splitter 1,1 &>/dev/null
 
-  # Move focus back to left pane and launch claude there
   sleep 0.2
   osascript -e 'tell application "System Events" to keystroke "claude\n"'
 }
