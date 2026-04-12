@@ -57,15 +57,17 @@ export PATH="$HOME/.orbstack/bin:$PATH"
 launch_claude() {
   local dir="$(pwd)"
 
-  # Open a new Ghostty window, cd to current dir, then run claude
-  ghostty --working-directory="$dir" --command="zsh -c 'claude; exec zsh'" &
+  # Open new Ghostty window as a plain shell
+  ghostty --working-directory="$dir" &
 
-  # Wait for the window to be ready
+  # Wait for window to be ready
   sleep 0.8
 
-  # Split right — this creates the shell pane (inherits working dir from Ghostty launch)
+  # Split right (right pane is a plain shell, focus moves to right pane)
   ghostty-pane-splitter 1,1
 
-  # Focus back to the left pane where claude is running
-  # (pane-splitter leaves focus on the newly created right pane)
+  # Move focus back to left pane and launch claude there
+  sleep 0.2
+  osascript -e 'tell application "System Events" to keystroke "claude\n"'
 }
+
