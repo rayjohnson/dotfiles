@@ -64,7 +64,7 @@ launch_claude() {
   sleep 0.8
 
   # Split right (right pane is a plain shell, focus moves to right pane)
-  ghostty-pane-splitter 1,1
+  ghostty-pane-splitter 1,1 &>/dev/null
 
   # Move focus back to left pane and launch claude there
   sleep 0.2
