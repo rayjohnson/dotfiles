@@ -36,7 +36,26 @@ chezmoi init --apply https://github.com/rayjohnson/dotfiles.git
 
 This will restore all dotfiles including your encrypted `~/.secrets.env`. It will also automatically run `mac-defaults.sh` to apply macOS system settings (key repeat, Finder preferences, etc.).
 
-### 5. Manual system settings (cannot be automated)
+### 5. Restore SSH key from 1Password
+```bash
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+op item get "UDM SSH Key" --fields private_key --reveal | tr -d '"' > ~/.ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519
+```
+
+### 6. Enable the 1Password SSH Agent
+1. Open **1Password → Settings → Developer**
+2. Enable **"Use the SSH agent"**
+3. Enable **"Integrate with 1Password CLI"**
+4. Open the **"UDM SSH Key"** item, click the private key field, and enable **"Use in SSH Agent"** (shown as a green "Fantastic" indicator)
+
+Once done, test with:
+```bash
+ssh udm
+```
+1Password will prompt for Touch ID and you'll be connected — no password needed.
+
+### 7. Manual system settings (cannot be automated)
 
 - **Disable iCloud Passwords & Keychain**: System Settings → Apple ID → iCloud → turn off "Passwords & Keychain"
 - **Disable AutoFill Passwords**: System Settings → Passwords → turn off "AutoFill Passwords"
@@ -66,25 +85,3 @@ Edit `~/.secrets.env` and re-add it with the `--encrypt` flag to preserve encryp
 vim ~/.secrets.env
 chezmoi add --encrypt ~/.secrets.env
 ```
-
-### 6. Restore SSH key and enable 1Password SSH Agent
-
-#### Restore the SSH key from 1Password
-```bash
-mkdir -p ~/.ssh && chmod 700 ~/.ssh
-# In 1Password, open the "UDM SSH Key" item, click the private key field,
-# click Export → Download Unencrypted Key, save as ~/.ssh/id_ed25519
-chmod 600 ~/.ssh/id_ed25519
-```
-
-#### Enable the 1Password SSH Agent
-1. Open **1Password → Settings → Developer**
-2. Enable **"Use the SSH agent"**
-3. Enable **"Integrate with 1Password CLI"**
-4. Open the **"UDM SSH Key"** item, click the private key field, and enable **"Use in SSH Agent"** (shown as a green "Fantastic" indicator)
-
-Once done, test with:
-```bash
-ssh udm
-```
-1Password will prompt for Touch ID and you'll be connected — no password needed.
