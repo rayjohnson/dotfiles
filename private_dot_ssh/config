@@ -14,3 +14,9 @@ Host udm
     HostName 192.168.1.1
     User root
     IdentityAgent "/Users/ray.johnson/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+Host mac-tailscale
+    HostName 100.124.234.80
+    User ray.johnson
+    IdentityFile ~/.ssh/id_ed25519
+    IdentityAgent "/Users/ray.johnson/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
