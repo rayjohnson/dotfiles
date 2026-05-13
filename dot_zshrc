@@ -9,6 +9,9 @@ export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH=$PATH:${GOPATH}/bin:${GOROOT}/bin
 
+# Gotta have a place for my own little tools to live
+export PATH=$PATH:~/bin
+
 export GOOGLE_CLOUD_PROJECT=moov-gemini
 
 # Secrets - need to be moved to a secrets.env file
@@ -70,3 +73,17 @@ launch_claude() {
 
 # 1Password SSH Agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+# Set location for Moov source
+export MOOV_IO_SRC=/Users/ray.johnson/src/moov-io
+export MOOV_FINANCIAL_SRC=/Users/ray.johnson/src/moovfinancial
+
+# Auto-dump Brewfile to chezmoi on brew install/uninstall
+brew() {
+  command brew "$@"
+  if [[ "$1" == "install" || "$1" == "uninstall" ]]; then
+    brew bundle dump --force --file "$(chezmoi source-path)/Brewfile"
+    chezmoi re-add "$(chezmoi source-path)/Brewfile"
+  fi
+}
+
