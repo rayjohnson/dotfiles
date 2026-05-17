@@ -20,6 +20,9 @@ export GOOGLE_CLOUD_PROJECT=moov-gemini
 # load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# chezmoi wrapper (guards against re-adding encrypted files without --encrypt)
+[[ -f ~/.chezmoi_wrapper.zsh ]] && source ~/.chezmoi_wrapper.zsh
+
 setopt prompt_subst
 # Function to get the current Git branch and status
 parse_git_branch() {
