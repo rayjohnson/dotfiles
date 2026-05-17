@@ -3,11 +3,10 @@ description: Periodic maintenance checklist — chezmoi sync, Home Assistant bat
 disable-model-invocation: true
 ---
 
-Run the two data-gathering scripts up front in parallel, then work through each section interactively. Do not dump raw script output — synthesize findings into readable summaries. Do NOT announce that you are running the scripts — no preamble text before the tool calls. Go silent until the summary is ready.
+Run the data-gathering scripts up front in a single Bash call, then work through each section interactively. Do not dump raw script output — synthesize findings into readable summaries. Do NOT announce that you are running the scripts — no preamble text before the tool calls. Go silent until the summary is ready.
 
 ```bash
-bash ~/.claude/skills/maintenance/chezmoi-diff.sh
-bash ~/.claude/skills/maintenance/ha-check.sh
+bash ~/.claude/skills/maintenance/chezmoi-diff.sh && bash ~/.claude/skills/maintenance/ha-check.sh && bash ~/.claude/skills/maintenance/brew-check.sh
 ```
 
 Also load the Things3 project todos (project UUID `RfJjvE5sSgMh1gn8Xmtc3w`):
@@ -17,7 +16,7 @@ use `mcp__1mcp__things3_1mcp_get_todos` with that UUID.
 
 ## Report
 
-Present all findings first as a clean summary (batteries, unavailable infra, firmware, chezmoi files). Then work through each actionable group interactively, one at a time, in this order:
+Present all findings first as a clean summary (batteries, unavailable infra, firmware, chezmoi files, homebrew outdated packages). Then work through each actionable group interactively, one at a time, in this order:
 
 ---
 
@@ -31,6 +30,16 @@ If yes, go through each modified file one at a time:
 - Ask: **"y/n?"** (y = re-add, n = skip)
 - If y: run `chezmoi re-add <file>` and confirm it worked
 - Move to the next file
+
+---
+
+## Interactive: Homebrew
+
+If nothing is outdated, skip this section entirely.
+
+Otherwise, list the outdated packages (name and version bump), give a one-line opinion on whether it's worth doing now (e.g. "all routine patch bumps — safe" vs "includes a major Docker version — worth a quick check"), then ask: **"Want to run brew upgrade?"**
+
+If yes: run `brew upgrade` (this may take a minute) and report what was upgraded.
 
 ---
 
