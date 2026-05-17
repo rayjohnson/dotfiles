@@ -109,7 +109,8 @@
       "Bash(tsc *)",
       "Bash(curl *)",
       "Bash(jq *)",
-      "Bash(shellcheck *)"
+      "Bash(shellcheck *)",
+      "Bash(bash ~/.claude/skills/maintenance/*.sh*)"
     ]
   },
   "enabledPlugins": {
