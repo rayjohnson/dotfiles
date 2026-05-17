@@ -82,8 +82,8 @@ export MOOV_FINANCIAL_SRC=/Users/ray.johnson/src/moovfinancial
 brew() {
   command brew "$@"
   if [[ "$1" == "install" || "$1" == "uninstall" ]]; then
-    brew bundle dump --force --file "$(chezmoi source-path)/Brewfile"
-    chezmoi re-add "$(chezmoi source-path)/Brewfile"
+    brew bundle dump --force --file "~/Brewfile"
+    chezmoi re-add "~/Brewfile"
   fi
 }
 
