@@ -68,8 +68,8 @@ These prevent macOS from showing password suggestions that overlap the 1Password
 
 ### If you install new things with Brew
 ```bash
-brew bundle dump --force --file "~/Brewfile"
-chezmoi re-add "~/Brewfile"
+brew bundle dump --force --file ~/Brewfile
+chezmoi re-add ~/Brewfile
 ```
 
 ### To update any tracked dotfile
