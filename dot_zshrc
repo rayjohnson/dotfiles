@@ -11,6 +11,8 @@ export PATH=$PATH:${GOPATH}/bin:${GOROOT}/bin
 
 # Gotta have a place for my own little tools to live
 export PATH=$PATH:~/bin
+# ux likes to install shit here...
+export PATH=$PATH:~/.local/bin
 
 export GOOGLE_CLOUD_PROJECT=moov-gemini
 
