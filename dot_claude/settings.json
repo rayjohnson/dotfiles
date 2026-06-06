@@ -110,11 +110,14 @@
       "Bash(curl *)",
       "Bash(jq *)",
       "Bash(shellcheck *)",
-      "Bash(bash ~/.claude/skills/maintenance/*.sh*)"
+      "Bash(bash ~/.claude/skills/maintenance/*.sh*)",
+      "WebFetch"
     ]
   },
   "enabledPlugins": {
-    "revdiff@revdiff": true
+    "revdiff@revdiff": true,
+    "swift-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {
