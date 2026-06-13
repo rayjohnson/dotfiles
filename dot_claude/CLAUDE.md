@@ -63,6 +63,11 @@ would normally trigger approval prompts — but sd, rg, jq, yq, and
 fastmod are pre-approved in settings.json so they will not prompt.
 The Edit tool never prompts regardless. Always prefer Edit first.
 
+### When to use Edit tool vs sd:
+- Single line replacement → sd is fine and pre-approved
+- Multiline pattern (match spans a newline) → Edit tool only, sd will fail
+- Uncertain whether pattern is single or multiline → Edit tool to be safe
+
 ### What Edit needs to work well:
 - Read the file first to get the exact string before attempting an Edit
 - Use rg to locate exact content if uncertain about surrounding text
