@@ -20,11 +20,14 @@ installing it via Homebrew before proceeding with an inferior alternative.
 
 ### Data Formats
 - **jq** — JSON querying and manipulation
-  - Check: `which jq`  
+  - Check: `which jq`
   - Install: `brew install jq`
 - **yq** — YAML querying and manipulation
   - Check: `which yq`
   - Install: `brew install yq`
+- **yamllint** — YAML validation and linting; always use instead of Python for YAML validation
+  - Check: `which yamllint`
+  - Install: `brew install yamllint`
 
 ### Search
 - **ripgrep (rg)** — fast file content search, use before Edit to confirm 
