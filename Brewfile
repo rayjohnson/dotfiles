@@ -86,6 +86,8 @@ brew "poppler"
 brew "python@3.11"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
+# Intuitive find & replace CLI
+brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Tool to enforce Swift style and conventions
