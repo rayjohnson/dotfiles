@@ -109,6 +109,12 @@
       "Bash(tsc *)",
       "Bash(curl *)",
       "Bash(jq *)",
+      "Bash(yq *)",
+      "Bash(rg *)",
+      "Bash(sd *)",
+      "Bash(fastmod *)",
+      "Bash(which *)",
+      "Bash(brew install *)",
       "Bash(shellcheck *)",
       "Bash(bash ~/.claude/skills/maintenance/*.sh*)",
       "WebFetch"
@@ -127,5 +133,6 @@
       }
     }
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true
 }
