@@ -33,7 +33,7 @@ installing it via Homebrew before proceeding with an inferior alternative.
   - Install: `brew install ripgrep`
 
 ### Text Replacement
-- **sd** — modern sed alternative with sane regex syntax
+- **sd** — modern sed alternative with sane regex syntax, pre-approved in settings.json
   - Check: `which sd`
   - Install: `brew install sd`
 
@@ -42,7 +42,32 @@ installing it via Homebrew before proceeding with an inferior alternative.
   Homebrew before falling back to Python or sed
 - Never write a temporary Python script solely to edit or transform files 
   when the above tools are available
-- Never use sed when fastmod or sd would be clearer and safer
+- Never use sed — use sd instead (it is pre-approved and will not prompt)
+
+## File Editing — Approval Avoidance
+
+The Edit and Write tools require NO Bash execution and NO approval prompts.
+Bash-based tools ALL require approval unless pre-approved in settings.json.
+
+### Decision rule — follow strictly:
+1. Single location edit → use Edit tool directly. Never use Bash.
+2. Whole file rewrite → use Write tool. Never use Bash.
+3. Bulk edits across multiple files → use Edit tool in a loop across
+   files. Still no Bash.
+4. Only use sd or fastmod when regex pattern matching is genuinely
+   required AND the Edit tool cannot work. Both are pre-approved.
+
+### The key insight:
+Even well-intentioned tools like sd and fastmod go through Bash and
+would normally trigger approval prompts — but sd, rg, jq, yq, and
+fastmod are pre-approved in settings.json so they will not prompt.
+The Edit tool never prompts regardless. Always prefer Edit first.
+
+### What Edit needs to work well:
+- Read the file first to get the exact string before attempting an Edit
+- Use rg to locate exact content if uncertain about surrounding text
+- Make multiple small Edit calls rather than one complex Bash command
+- Never construct a Bash command to handle uncertainty — Read first, then Edit
 
 
 ## chezmoi
