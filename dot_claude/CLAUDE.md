@@ -49,6 +49,17 @@ installing it via Homebrew before proceeding with an inferior alternative.
   when the above tools are available
 - Never use sed — use sd instead (it is pre-approved and will not prompt)
 
+## Bash Tool — Exit Codes and Output Capture
+
+Claude Code's Bash tool automatically returns stdout, stderr, and the exit
+code as part of every tool result. Therefore:
+- Never append `echo "exit: $?"` — the exit code is already available
+- Never use `2>&1` to capture stderr — it is already captured separately
+- Never wrap commands in diagnostic scaffolding just to observe results
+- Run commands directly: `fastmod 'a' 'b' src/` not `fastmod 'a' 'b' src/ 2>&1 && echo $?`
+- Wrapping pre-approved tools in shell expressions breaks pattern matching
+  and causes unnecessary approval prompts
+
 ## File Editing — Approval Avoidance
 
 The Edit and Write tools require NO Bash execution and NO approval prompts.
