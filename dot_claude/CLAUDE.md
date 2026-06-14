@@ -17,6 +17,8 @@ installing it via Homebrew before proceeding with an inferior alternative.
 - **fastmod** — bulk pattern replacement across files
   - Check: `which fastmod`
   - Install: `brew install fastmod`
+  - Run directly: `fastmod 'pattern' 'replacement' dir/` — do NOT wrap in
+    shell scaffolding (2>&1, echo exit codes, etc.) as this breaks pre-approval
 
 ### Data Formats
 - **jq** — JSON querying and manipulation
