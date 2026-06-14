@@ -115,6 +115,8 @@
       "Bash(rg *)",
       "Bash(sd *)",
       "Bash(fastmod *)",
+      "Bash(fastmod * 2>&1)",
+      "Bash(fastmod * && echo*)",
       "Bash(which *)",
       "Bash(brew install *)",
       "Bash(bash ~/.claude/skills/maintenance/*.sh*)",
