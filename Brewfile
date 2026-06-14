@@ -6,6 +6,8 @@ tap "moovfinancial/moovbrew"
 tap "rikeda71/tap"
 tap "spacelift-io/spacelift"
 tap "umputun/apps"
+# Run your GitHub Actions locally
+brew "act"
 # Simple, modern, secure file encryption
 brew "age"
 # Zstandard is a real-time compression algorithm
