@@ -34,6 +34,8 @@ brew "cowsay"
 brew "curl"
 # Control the macOS dark mode from the command-line
 brew "dark-mode"
+# GNU data recovery tool
+brew "ddrescue"
 # More intuitive version of du in rust
 brew "dust"
 # Fast, partial replacement for codemod (find/replace tool for programmers)
