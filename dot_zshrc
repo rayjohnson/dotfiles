@@ -75,6 +75,15 @@ launch_claude() {
   osascript -e 'tell application "System Events" to keystroke "claude\n"'
 }
 
+# call "marl foo.md" to view markdown files
+mark() {
+    if [ "$1" ]; then
+        open -a "Marked 2" "$1"
+    else
+        open -a "Marked 2"
+    fi
+}
+
 
 # 1Password SSH Agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
@@ -90,5 +99,12 @@ brew() {
     brew bundle dump --force --file ~/Brewfile
     chezmoi re-add ~/Brewfile
   fi
+}
+
+# Show my open prs
+openprs() {
+    gh search prs --author "@me" --state open --owner moovfinancial \
+      --json number,title,repository,url \
+      --jq '.[] | "#: \(.number)\nRepo: \(.repository.nameWithOwner | split("/")[1])\nTitle: \(.title)\nURL: \(.url)\n────────────────────────────────────────"'
 }
 
