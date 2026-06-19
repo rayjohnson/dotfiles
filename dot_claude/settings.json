@@ -102,6 +102,15 @@
       "mcp__claude_ai_Ramp__ramp_search_purchase_orders",
       "mcp__claude_ai_Ramp__ramp_search_reimbursements",
       "mcp__claude_ai_Ramp__ramp_search_vendors",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git remote*)",
+      "Bash(git worktree list*)",
+      "Bash(git stash list*)",
+      "Bash(git ls-files*)",
       "Bash(node *)",
       "Bash(npm *)",
       "Bash(npx *)",
@@ -118,15 +127,16 @@
       "Bash(fastmod * 2>&1)",
       "Bash(fastmod * && echo*)",
       "Bash(which *)",
+      "Bash(make *)",
       "Bash(brew install *)",
       "Bash(bash ~/.claude/skills/maintenance/*.sh*)",
       "WebFetch"
     ]
   },
+  "model": "sonnet[1m]",
   "enabledPlugins": {
     "revdiff@revdiff": true,
-    "swift-lsp@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "revdiff": {
