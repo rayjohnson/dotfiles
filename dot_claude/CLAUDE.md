@@ -6,6 +6,14 @@
 ## Git commits
 - Never add a "Co-Authored-By:" trailer to commit messages.
 
+## Git discipline — safety rules
+
+- **Never push without stating branch and destination first.** Say what branch and where before running the push command.
+- **Never use complex chained git write commands.** One write action per command, simple and readable. No `&&`-chained git operations that modify state.
+- **Never commit to main directly.** Always work on a feature branch.
+- **After any third-party tool runs, check `git status` before staging or committing anything.** Tools (spec-kitty, etc.) may have made unexpected git changes.
+- **Write operations always require approval:** `git add`, `git commit`, `git push`, `git checkout`, `git merge`, `git rebase`, `git rm`, `git reset`.
+
 ## Preferred Tools & Auto-Install via Homebrew
 
 Before falling back to Python scripts or sed for file manipulation, check 
