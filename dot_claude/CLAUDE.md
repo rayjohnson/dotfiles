@@ -112,3 +112,8 @@ The Edit tool never prompts regardless. Always prefer Edit first.
 ## chezmoi
 - `~/.claude/CLAUDE.md` is managed by chezmoi. After any change to this file, offer to run `chezmoi add ~/.claude/CLAUDE.md` to sync it.
 - Always edit the real deployed file (e.g. `~/.chezmoi_wrapper.zsh`), never the chezmoi source directory file (e.g. `~/.local/share/chezmoi/dot_chezmoi_wrapper.zsh`). Then offer to run `chezmoi re-add` to sync it back.
+
+## Spec Kitty
+- Always use `spec-kitty <command>` CLI to query mission, lane, and WP state
+- Never grep through `.kittify/` or `kitty-specs/` directly to discover state — use the CLI
+- Run `spec-kitty help` if unsure what command to use for a given query
