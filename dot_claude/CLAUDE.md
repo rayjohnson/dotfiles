@@ -32,9 +32,11 @@ installing it via Homebrew before proceeding with an inferior alternative.
 - **jq** — JSON querying and manipulation
   - Check: `which jq`
   - Install: `brew install jq`
+  - **NEVER use `python -c`, `python3 -c`, or a Python script to parse or transform JSON — always use jq**
 - **yq** — YAML querying and manipulation
   - Check: `which yq`
   - Install: `brew install yq`
+  - **NEVER use `python -c`, `python3 -c`, or a Python script to parse or transform YAML — always use yq**
 - **yamllint** — YAML validation and linting; always use instead of Python for YAML validation
   - Check: `which yamllint`
   - Install: `brew install yamllint`
@@ -63,6 +65,8 @@ Claude Code's Bash tool automatically returns stdout, stderr, and the exit
 code as part of every tool result. Therefore:
 - Never append `echo "exit: $?"` — the exit code is already available
 - Never use `2>&1` to capture stderr — it is already captured separately
+- Never use `2>/dev/null` to suppress stderr — stderr is already captured separately
+- Never use `xargs` to chain commands — run commands discretely or use native tool alternatives
 - Never wrap commands in diagnostic scaffolding just to observe results
 - Run commands directly: `fastmod 'a' 'b' src/` not `fastmod 'a' 'b' src/ 2>&1 && echo $?`
 - Wrapping pre-approved tools in shell expressions breaks pattern matching
