@@ -52,12 +52,18 @@ installing it via Homebrew before proceeding with an inferior alternative.
   - Check: `which sd`
   - Install: `brew install sd`
 
+### File Reading & Pagination
+- **NEVER use `sed -n 'X,Yp'` to read a line range** — use the Read tool with a line range instead (no Bash, no approval prompt)
+- **NEVER use `sed` for file viewing of any kind** — it always requires approval
+- To read lines 335–375 of a file: use the Read tool with `view_range: [335, 375]`
+- To search for a pattern and see context: use `rg -n 'pattern' file` (pre-approved)
+
 ### Behavior
 - If a preferred tool is missing, say so and offer to install it via 
   Homebrew before falling back to Python or sed
 - Never write a temporary Python script solely to edit or transform files 
   when the above tools are available
-- Never use sed — use sd instead (it is pre-approved and will not prompt)
+- Never use sed — use sd instead for replacements (it is pre-approved and will not prompt)
 
 ## Bash Tool — Exit Codes and Output Capture
 
