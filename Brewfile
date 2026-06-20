@@ -90,6 +90,8 @@ brew "poppler"
 brew "python@3.11"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
 # Intuitive find & replace CLI
 brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -194,7 +196,8 @@ vscode "ms-vscode.remote-explorer"
 vscode "ms-vsliveshare.vsliveshare"
 go "golang.org/x/vuln/cmd/govulncheck"
 go "go.uber.org/nilaway/cmd/nilaway"
-uv "specify-cli"
+uv "spec-kitty-cli"
+uv "spec-kitty-orchestrator"
 npm "@1mcp/agent"
 npm "@vibe-kit/grok-cli"
 npm "pnpm"
