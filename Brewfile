@@ -38,6 +38,8 @@ brew "dark-mode"
 brew "ddrescue"
 # More intuitive version of du in rust
 brew "dust"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
 # Fast, partial replacement for codemod (find/replace tool for programmers)
 brew "fastmod"
 # Simple, fast and user-friendly alternative to find
