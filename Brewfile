@@ -157,6 +157,8 @@ cask "home-assistant"
 cask "kiro"
 # App to manage software development and track bugs
 cask "linear"
+# Markdown editor with live preview and syntax highlighting
+cask "macdown-3000"
 # Markdown editor
 cask "mark-text"
 # Previewer for Markdown, MultiMarkdown and other text markup languages
