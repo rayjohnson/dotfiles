@@ -87,6 +87,8 @@ brew "m1ddc"
 brew "mosh"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# CLI for Playwright: record/generate code, inspect selectors, take screenshots
+brew "playwright-cli"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Interpreted, interactive, object-oriented programming language
