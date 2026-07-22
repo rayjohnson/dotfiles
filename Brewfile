@@ -1,4 +1,5 @@
 tap "1password/tap"
+tap "anomalyco/tap"
 tap "derailed/k9s"
 tap "hashicorp/tap"
 tap "mistertea/et"
@@ -108,7 +109,7 @@ brew "uv"
 brew "wget"
 # Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
-# Best command-line tool to install and switch between multiple versions of Xcode
+# Command-line tool to install and switch between multiple versions of Xcode
 brew "xcodes"
 # Linter for YAML files
 brew "yamllint"
@@ -116,6 +117,8 @@ brew "yamllint"
 brew "yq"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -200,8 +203,8 @@ vscode "ms-vscode.remote-explorer"
 vscode "ms-vsliveshare.vsliveshare"
 go "golang.org/x/vuln/cmd/govulncheck"
 go "go.uber.org/nilaway/cmd/nilaway"
-uv "spec-kitty-cli"
-uv "spec-kitty-orchestrator"
+uv "spec-kitty-cli", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty"
+uv "spec-kitty-orchestrator", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty-orchestrator"
 npm "@1mcp/agent"
 npm "@vibe-kit/grok-cli"
 npm "pnpm"
