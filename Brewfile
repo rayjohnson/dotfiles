@@ -160,6 +160,8 @@ cask "google-drive"
 cask "google-gemini"
 # Grammarly for desktop
 cask "grammarly-desktop"
+# Extensible coding agent for the terminal
+cask "grok-build"
 # Companion app for Home Assistant home automation software
 cask "home-assistant"
 # Agent-centric IDE with spec-driven development
@@ -210,5 +212,4 @@ go "go.uber.org/nilaway/cmd/nilaway"
 uv "spec-kitty-cli", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty"
 uv "spec-kitty-orchestrator", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty-orchestrator"
 npm "@1mcp/agent"
-npm "@vibe-kit/grok-cli"
 npm "pnpm"
