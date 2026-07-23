@@ -13,6 +13,8 @@ brew "act"
 brew "age"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
+# TIFF library and utilities
+brew "libtiff"
 # Java build tool
 brew "ant"
 # Cryptography and SSL/TLS Toolkit
