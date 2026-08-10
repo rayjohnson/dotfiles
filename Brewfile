@@ -86,6 +86,8 @@ brew "librdkafka"
 brew "lrzip"
 # Control external displays (USB-C/DisplayPort Alt Mode) using DDC/CI on M1 Macs
 brew "m1ddc"
+# CLI tool to help you manage repositories
+brew "mani"
 # Remote terminal application
 brew "mosh"
 # Package compiler and linker metadata toolkit
