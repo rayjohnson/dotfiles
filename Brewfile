@@ -1,4 +1,5 @@
 tap "1password/tap"
+tap "alajmo/mani"
 tap "anomalyco/tap"
 tap "derailed/k9s"
 tap "hashicorp/tap"
@@ -164,8 +165,6 @@ cask "grammarly-desktop"
 cask "grok-build"
 # Companion app for Home Assistant home automation software
 cask "home-assistant"
-# Agent-centric IDE with spec-driven development
-cask "kiro"
 # App to manage software development and track bugs
 cask "linear"
 # Markdown editor with live preview and syntax highlighting
@@ -212,4 +211,5 @@ go "go.uber.org/nilaway/cmd/nilaway"
 uv "spec-kitty-cli", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty"
 uv "spec-kitty-orchestrator", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty-orchestrator"
 npm "@1mcp/agent"
+npm "playwright"
 npm "pnpm"
