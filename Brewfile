@@ -124,6 +124,8 @@ brew "yamllint"
 brew "yq"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
 # Password manager that keeps all passwords secure behind one password
