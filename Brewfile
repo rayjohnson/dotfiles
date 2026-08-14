@@ -102,6 +102,8 @@ brew "python@3.11"
 brew "qpdf"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
+# Safe, concurrent, practical language
+brew "rust"
 # Intuitive find & replace CLI
 brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts
