@@ -7,6 +7,7 @@ tap "mistertea/et"
 tap "moovfinancial/moovbrew"
 tap "rikeda71/tap"
 tap "spacelift-io/spacelift"
+tap "stablyai/orca"
 tap "umputun/apps"
 # Run your GitHub Actions locally
 brew "act"
@@ -193,6 +194,8 @@ cask "obsidian"
 cask "opencode-desktop"
 # Replacement for Docker Desktop
 cask "orbstack"
+# IDE for orchestrating AI coding agents across terminals and worktrees
+cask "stablyai/orca/orca", trusted: true
 # Collaboration platform for API development
 cask "postman"
 # File sync and share software
