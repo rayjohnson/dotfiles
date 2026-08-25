@@ -189,6 +189,8 @@ cask "modern-csv"
 cask "monitorcontrol"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# AI coding agent desktop client
+cask "opencode-desktop"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Collaboration platform for API development
@@ -216,8 +218,8 @@ vscode "ms-vscode.remote-explorer"
 vscode "ms-vsliveshare.vsliveshare"
 go "golang.org/x/vuln/cmd/govulncheck"
 go "go.uber.org/nilaway/cmd/nilaway"
-uv "spec-kitty-cli", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty"
-uv "spec-kitty-orchestrator", source: "file:///Users/ray.johnson/src/rayjohnson/spec-kitty-orchestrator"
+uv "spec-kitty-cli"
+uv "spec-kitty-orchestrator"
 npm "@1mcp/agent"
 npm "playwright"
 npm "pnpm"
