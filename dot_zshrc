@@ -108,3 +108,26 @@ openprs() {
       --jq '.[] | "#: \(.number)\nRepo: \(.repository.nameWithOwner | split("/")[1])\nTitle: \(.title)\nURL: \(.url)\n────────────────────────────────────────"'
 }
 
+# cmux helper
+cx() {
+  local dir="$PWD"
+
+  local existing
+  existing=$(cmux workspace-group list --json | jq -r --arg n "$repo" '.[] | select(.name==$n) | .id')
+
+  if [ -n "$existing" ] && [ "$existing" != "null" ]; then
+    cmux workspace-group focus "$existing"
+  else
+    local g
+    g=$(cmux workspace-group create --name "$repo" --cwd "$dir" --json | jq -r '.id')
+    cmux workspace-group new-workspace "$g"
+  fi
+}
+
+
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
