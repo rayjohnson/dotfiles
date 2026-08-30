@@ -111,15 +111,16 @@ openprs() {
 # cmux helper
 cx() {
   local dir="$PWD"
+  local name="$(basename "$dir")"
 
   local existing
-  existing=$(cmux workspace-group list --json | jq -r --arg n "$repo" '.[] | select(.name==$n) | .id')
+  existing=$(cmux workspace-group list --json | jq -r --arg n "$name" '.groups[] | select(.name==$n) | .ref')
 
   if [ -n "$existing" ] && [ "$existing" != "null" ]; then
     cmux workspace-group focus "$existing"
   else
     local g
-    g=$(cmux workspace-group create --name "$repo" --cwd "$dir" --json | jq -r '.id')
+    g=$(cmux workspace-group create --name "$name" --cwd "$dir" --json | jq -r '.group.ref')
     cmux workspace-group new-workspace "$g"
   fi
 }
