@@ -11,6 +11,10 @@ tap "stablyai/orca"
 tap "umputun/apps"
 # Run your GitHub Actions locally
 brew "act"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
 # Simple, modern, secure file encryption
 brew "age"
 # Zstandard is a real-time compression algorithm
@@ -107,8 +111,6 @@ brew "ruff"
 brew "rustup"
 # Intuitive find & replace CLI
 brew "sd"
-# Static analysis and lint tool, for (ba)sh scripts
-brew "shellcheck"
 # Tool to enforce Swift style and conventions
 brew "swiftlint"
 # Display directories as trees (with optional color/HTML output)
