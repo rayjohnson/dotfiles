@@ -37,6 +37,8 @@ brew "bash"
 brew "bash-completion"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # Apjanke's fork of the classic cowsay project
 brew "cowsay"
 # Get a file from an HTTP, HTTPS or FTP server
