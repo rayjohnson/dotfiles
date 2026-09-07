@@ -186,8 +186,6 @@ cask "macdown-3000"
 cask "mark-text"
 # Previewer for Markdown, MultiMarkdown and other text markup languages
 cask "marked-app"
-# Multi-platform web browser
-cask "microsoft-edge"
 # CSV editor
 cask "modern-csv"
 # Tool to control external monitor brightness & volume
