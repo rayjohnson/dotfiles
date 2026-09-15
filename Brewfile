@@ -7,7 +7,7 @@ tap "mistertea/et"
 tap "moovfinancial/moovbrew"
 tap "rikeda71/tap"
 tap "spacelift-io/spacelift"
-tap "stablyai/orca"
+tap "stablyai/orca", trusted: { casks: ["orca"] }
 tap "umputun/apps"
 # Run your GitHub Actions locally
 brew "act"
@@ -196,8 +196,6 @@ cask "obsidian"
 cask "opencode-desktop"
 # Replacement for Docker Desktop
 cask "orbstack"
-# IDE for orchestrating AI coding agents across terminals and worktrees
-cask "stablyai/orca/orca", trusted: true
 # Collaboration platform for API development
 cask "postman"
 # File sync and share software
@@ -210,17 +208,8 @@ cask "spotify"
 cask "sublime-text"
 # Mesh VPN based on WireGuard
 cask "tailscale-app"
-# Open-source code editor
-cask "visual-studio-code"
-# Multiplayer code editor
-cask "zed"
-vscode "github.codespaces"
-vscode "mechatroner.rainbow-csv"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vsliveshare.vsliveshare"
+vscode "anysphere.remote-containers"
+vscode "anysphere.remote-ssh"
 go "golang.org/x/vuln/cmd/govulncheck"
 go "go.uber.org/nilaway/cmd/nilaway"
 uv "spec-kitty-cli"
