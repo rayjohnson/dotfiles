@@ -157,8 +157,6 @@ cask "cursor-cli"
 cask "dropbox"
 # Email client
 cask "fastmail"
-# Web browser
-cask "firefox"
 cask "font-jetbrains-mono"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
