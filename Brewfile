@@ -97,6 +97,8 @@ brew "m1ddc"
 brew "mani"
 # Remote terminal application
 brew "mosh"
+# Drop-in replacement for Terraform. Infrastructure as Code Tool
+brew "opentofu"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # CLI for Playwright: record/generate code, inspect selectors, take screenshots
