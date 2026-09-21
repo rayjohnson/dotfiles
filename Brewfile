@@ -119,6 +119,8 @@ brew "sd"
 brew "swiftlint"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Ultra fast grep with query UI, fuzzy search, archive search, and more
+brew "ugrep"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Internet file retriever
