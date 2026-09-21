@@ -35,6 +35,8 @@ brew "automake"
 brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
+# Breadth-first version of find
+brew "bfs"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # GNU File, Shell, and Text utilities
