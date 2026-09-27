@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Run Claude Code through Vertex AI, using the same arguments as `claude`.
+unset ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN ANTHROPIC_BASE_URL
+export CLAUDE_CODE_USE_VERTEX=1
+export ANTHROPIC_VERTEX_PROJECT_ID=moov-bldr-relay
+export CLOUD_ML_REGION=global
+export ANTHROPIC_MODEL=claude-sonnet-5
+
+exec claude "$@"
