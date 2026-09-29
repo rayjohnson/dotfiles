@@ -8,8 +8,19 @@
 - **Never push without stating branch and destination first.** Say what branch and where before running the push command.
 - **Never use complex chained git write commands.** One write action per command, simple and readable. No `&&`-chained git operations that modify state.
 - **Never commit to main directly.** Always work on a feature branch.
-- **After any third-party tool runs, check `git status` before staging or committing anything.** Tools (spec-kitty, etc.) may have made unexpected git changes.
+- **After any third-party tool runs, check `git status` before staging or committing anything.** Code generators, formatters, and scaffolding tools may have made unexpected git changes.
 - **Write operations always require approval:** `git add`, `git commit`, `git push`, `git checkout`, `git merge`, `git rebase`, `git rm`, `git reset`.
+
+## PR and commit message style
+
+Every non-trivial PR description and commit message must follow this order:
+
+1. **The problem** — a concrete example anyone can understand. What breaks, what the user sees, what workaround they need. No jargon openers.
+2. **The fix in plain terms** — what changed, in one or two sentences, before any code detail.
+3. **Technical details** — function names, module paths, the specific mechanism.
+4. **Why this approach** — why this fix rather than alternatives, and how it aligns with the project's broader goals.
+
+The technical section can be brief; the problem and plain-English sections must always be present.
 
 ## Preferred Tools & Auto-Install via Homebrew
 
@@ -54,6 +65,19 @@ installing it via Homebrew before proceeding with an inferior alternative.
 - **NEVER use `sed` for file viewing of any kind** — it always requires approval
 - To read lines 335–375 of a file: use the Read tool with `view_range: [335, 375]`
 - To search for a pattern and see context: use `rg -n 'pattern' file` (pre-approved)
+- **Prefer the Read tool over `rg`/Bash for viewing file *content*.** Use `rg` to
+  *locate* (file paths + line numbers: `rg -l`, `rg -n`), then read the actual
+  lines with the Read tool. Reason: the Bash tool-result pipeline occasionally
+  corrupts large command output in transit — long identifiers get silently
+  replaced with short garbage tokens (observed: `quarantine_lines` → `ln`,
+  `repair_repo` → `n`). The Read tool, `jq`, and `git log` were never affected;
+  large `rg`/text dumps were. The on-disk bytes are always correct — only the
+  relayed copy is garbled.
+- **When Bash output shows implausible tokens** (nonsense where real
+  identifiers/paths belong), treat it as corrupted-in-transit — do NOT act on it.
+  Re-run smaller/targeted, switch to the Read tool, or `xxd` a token for ground
+  truth. Keep `rg` output small (tight patterns, `head`); big dumps are the ones
+  that corrupt.
 
 ### Behavior
 - If a preferred tool is missing, say so and offer to install it via 
@@ -109,8 +133,3 @@ The Edit tool never prompts regardless. Always prefer Edit first.
 ## chezmoi
 - `~/.claude/CLAUDE.md` is managed by chezmoi. After any change to this file, offer to run `chezmoi add ~/.claude/CLAUDE.md` to sync it.
 - Always edit the real deployed file (e.g. `~/.chezmoi_wrapper.zsh`), never the chezmoi source directory file (e.g. `~/.local/share/chezmoi/dot_chezmoi_wrapper.zsh`). Then offer to run `chezmoi re-add` to sync it back.
-
-## Spec Kitty
-- Always use `spec-kitty <command>` CLI to query mission, lane, and WP state
-- Never grep through `.kittify/` or `kitty-specs/` directly to discover state — use the CLI
-- Run `spec-kitty help` if unsure what command to use for a given query
