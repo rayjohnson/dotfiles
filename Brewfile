@@ -141,16 +141,12 @@ brew "zellij"
 brew "zig"
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
-# Password manager that keeps all passwords secure behind one password
-cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
-# Terminal-based AI coding assistant
-cask "claude-code"
 # Ghostty-based terminal with vertical tabs and notifications for AI coding agents
 cask "cmux"
 # OpenAI's coding agent that runs in your terminal
