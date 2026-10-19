@@ -75,6 +75,8 @@ brew "go"
 brew "golangci-lint"
 # Tool for glamorous shell scripts
 brew "gum"
+# Configurable static site generator
+brew "hugo"
 # Generic library support script
 brew "libtool"
 # Tools and libraries to manipulate images in select formats
