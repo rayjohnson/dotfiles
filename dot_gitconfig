@@ -22,3 +22,10 @@
 	insteadOf = git@github.com:
 [fetch]
 	prune = true
+[merge]
+	conflictStyle = zdiff3
+[pull]
+	ff = only
+[diff]
+	algorithm = histogram
+	colorMoved = plain
