@@ -23,14 +23,14 @@ brew "zstd"
 brew "libtiff"
 # Java build tool
 brew "ant"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 3.2
@@ -101,6 +101,8 @@ brew "m1ddc"
 brew "mani"
 # Remote terminal application
 brew "mosh"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Drop-in replacement for Terraform. Infrastructure as Code Tool
 brew "opentofu"
 # Package compiler and linker metadata toolkit
